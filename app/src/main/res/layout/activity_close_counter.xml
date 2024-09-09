@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".welcome.OpenCounterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/primaryColor"
+        android:gravity="center_vertical"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline" />
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:fontFamily="@font/medium"
+            android:gravity="center"
+            android:paddingLeft="12dp"
+            android:text="Close Counter"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_power"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/counter_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/counter_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="9"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="10dp"
+                        app:cardElevation="3dp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/drawer_img"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
+                                android:src="@drawable/counter_orders" />
+
+                            <TextView
+                                android:id="@+id/select_counter"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="9"
+                                android:background="@color/white"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/medium"
+                                android:gravity="center_vertical"
+                                android:hint="Select Counter"
+                                android:maxLines="1"
+                                android:paddingLeft="10dp"
+                                android:textColor="#000000"
+                                android:textSize="14sp" />
+
+                            <ImageView
+                                android:id="@+id/barcode_img"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/thin_barcode"
+                                android:visibility="invisible" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b91 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b91 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b92 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b92 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b95 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b95 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b910 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_10"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b910 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b920 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_20"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b920 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b950 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_50"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b950 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b9100 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_100"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b9100 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b9200 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_200"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b9200 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b9500 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_500"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b9500 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:text="\u20b92000 Coin/Note"
+                                android:textSize="14sp" />
+
+                            <EditText
+                                android:id="@+id/rupee_2000"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/borders_new"
+                                android:digits="0123456789"
+                                android:fontFamily="@font/medium"
+                                android:hint="\u20b92000 Coin/Note"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="14dp"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="12dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/open_counter"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="@color/primaryColor"
+                            app:cardCornerRadius="6dp"
+                            app:cardUseCompatPadding="true"
+                            app:contentPadding="15dp">
+
+                            <TextView
+                                android:id="@+id/open_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:gravity="center"
+                                android:text="Close Counter"
+                                android:textColor="#ffffff"
+                                android:textSize="15sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cancel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_weight="1"
+                            app:cardBackgroundColor="#dadada"
+                            app:cardCornerRadius="6dp"
+                            app:cardUseCompatPadding="true"
+                            app:contentPadding="15dp">
+
+                            <TextView
+                                android:id="@+id/cancel_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/medium"
+                                android:gravity="center"
+                                android:text="Cancel"
+                                android:textColor="#000000"
+                                android:textSize="15sp" />
+
+                        </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/progress_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:fontFamily="@font/medium"
+                android:padding="15dp"
+                android:text="घर घर बाजार : सोच बदलो दुकान बदलो"
+                android:textSize="14sp" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/progressColor"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/no_products"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:src="@drawable/no_order_found" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/medium"
+                android:gravity="center"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:text="no counter found."
+                android:textColor="#000000" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_lays"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/product_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginRight="-2dp"
+        android:layout_marginBottom="-2dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0.5dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <FrameLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp">
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+
+                    <TextView
+                        android:id="@+id/outofstock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/border_bg"
+                        android:elevation="15dp"
+                        android:fontFamily="@font/medium"
+                        android:gravity="center"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:text="OUT OF STOCK"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:visibility="gone" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/medium"
+                        android:maxLines="1"
+                        android:text="Canvera Black Heel"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/medium"
+                            android:text="1200 Rs"
+                            android:textColor="#000000"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/cutprice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:maxLines="1"
+                            android:paddingLeft="12sp"
+                            android:text="25Rs"
+                            android:textColor="@color/textSub"
+                            android:textSize="13sp"
+                            app:layout_constraintStart_toEndOf="@id/price"
+                            app:layout_constraintTop_toBottomOf="@+id/ratedrop" />
+
+                        <RelativeLayout
+                            android:id="@+id/cart_lay"
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:id="@+id/add_txt"
+                                android:layout_width="120dp"
+                                android:layout_height="37dp"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="9"
+                                    android:background="@drawable/add_cart_round"
+                                    android:fontFamily="@font/medium"
+                                    android:gravity="center"
+                                    android:text="ADD"
+                                    android:textColor="@color/primaryColor"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/q_lay"
+                                android:layout_width="110dp"
+                                android:layout_height="37dp"
+                                android:background="@drawable/qty_round"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:visibility="visible">
+
+                                <ImageView
+                                    android:id="@+id/mins"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="9"
+                                    android:padding="5dp"
+                                    android:paddingLeft="4dp"
+                                    android:src="@drawable/remmmm" />
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/q_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_gravity="center"
+                                        android:fontFamily="@font/bold"
+                                        android:gravity="center"
+                                        android:text="2"
+                                        android:textColor="#ffffff"
+                                        android:textSize="14sp" />
+
+                                    <ProgressBar
+                                        android:id="@+id/add_progress"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"
+                                        android:layout_centerInParent="true"
+                                        android:progressTint="@color/white" />
+
+                                </RelativeLayout>
+
+
+                                <ImageView
+                                    android:id="@+id/plls"
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="9"
+                                    android:paddingRight="4dp"
+                                    android:src="@drawable/add_ic" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp">
+
+                        <TextView
+                            android:id="@+id/product_cashback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:minLines="2"
+                            android:fontFamily="@font/medium"
+                            android:text="Product"
+                            android:textColor="@color/black"
+                            android:textSize="11sp"
+                            app:layout_constraintStart_toEndOf="@id/price"
+                            app:layout_constraintTop_toBottomOf="@+id/ratedrop" />
+
+                        <TextView
+                            android:id="@+id/copartner_cashback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:gravity="center"
+                            android:minLines="2"
+                            android:text="CoPartner"
+                            android:textColor="@color/black"
+                            android:textSize="11sp"
+                            app:layout_constraintStart_toEndOf="@id/price"
+                            app:layout_constraintTop_toBottomOf="@+id/ratedrop" />
+
+                        <TextView
+                            android:id="@+id/land_cashback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/medium"
+                            android:gravity="right"
+                            android:minLines="2"
+                            android:paddingLeft="12dp"
+                            android:text="Land"
+                            android:textColor="@color/black"
+                            android:textSize="11sp"
+                            app:layout_constraintStart_toEndOf="@id/price"
+                            app:layout_constraintTop_toBottomOf="@+id/ratedrop" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/discountlayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/rec_c" />
+
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/bold"
+                    android:gravity="center"
+                    android:text="32%\nOFF"
+                    android:textColor="@color/white"
+                    android:textSize="8sp" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/progressColor"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

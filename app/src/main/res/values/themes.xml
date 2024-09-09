@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.EasyConnect" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryColor</item>
+    </style>
+    <style name="progressColor" parent="Widget.AppCompat.ProgressBar">
+        <item name="colorControlActivated">@color/primaryColor</item>
+    </style>
+    <style name="Theme.EasyConnect" parent="Base.Theme.EasyConnect" />
+</resources>
